@@ -5,10 +5,16 @@ import "./app.scss";
 
 @Component({
     template: require("./app.html"),
-    components: {  },
+    components: { },
 })
 
 export class App extends Vue {
+
+    /**
+     *
+     */
+    public menuVisible = false;
+
     public created() {
 
     }

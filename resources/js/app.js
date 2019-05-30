@@ -8,12 +8,16 @@ require('./bootstrap');
 
 import Vue from 'vue'
 import Routes from './route';
+Vue.config.productionTip = false
+
+import VueMaterial from 'vue-material'
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
+Vue.use(VueMaterial);
 
 const app = new Vue({
     router: Routes
