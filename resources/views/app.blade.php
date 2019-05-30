@@ -10,7 +10,6 @@
 <body>
 <div id="app">
     <router-view></router-view>
-{{--    <contact></contact>--}}
 </div>
 <script src="{{ mix('js/app.js') }}" type="text/javascript"></script>
 </body>

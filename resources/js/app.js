@@ -7,24 +7,7 @@
 require('./bootstrap');
 
 import Vue from 'vue'
-
-import VueRouter from 'vue-router';
-Vue.use(VueRouter);
-
-import { Contact } from './pages/contact/contact';
-
-const routes = [
-    {
-        path: '/contact',
-        name: 'Contact',
-        component: Contact
-    }
-];
-
-const router = new VueRouter({
-    mode: 'history',
-    routes: routes // short for `routes: routes`
-});
+import Routes from './route';
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -33,7 +16,7 @@ const router = new VueRouter({
  */
 
 const app = new Vue({
-    router
+    router: Routes
 }).$mount('#app')
 
 export default app;
