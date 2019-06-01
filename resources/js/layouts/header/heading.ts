@@ -1,5 +1,5 @@
 import Vue from "vue";
-import Component from "vue-class-component";
+import { Component, Prop }  from "vue-property-decorator";
 
 import "./heading.scss";
 
@@ -10,9 +10,20 @@ import "./heading.scss";
 
 export class Heading extends Vue {
 
-    public menuVisible = false;
+    @Prop({
+        default: false,
+        type: Boolean
+    })
+    public menuVisible;
+
+    /**
+     * Open sidebar
+     */
+    public openSidebar(){
+        this.menuVisible = !this.menuVisible;
+        this.$emit('update:menuVisible', this.menuVisible);
+    }
 
     public created() {
-        console.log('header create');
     }
 }
