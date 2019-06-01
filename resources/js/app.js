@@ -11,6 +11,7 @@ import Routes from './route';
 Vue.config.productionTip = false
 
 import VueMaterial from 'vue-material'
+import { App } from "./layouts/app";
 
 /**
  * Next, we will create a fresh Vue application instance and attach it to
@@ -20,7 +21,8 @@ import VueMaterial from 'vue-material'
 Vue.use(VueMaterial);
 
 const app = new Vue({
-    router: Routes
+    router: Routes,
+    render: h => h(App)
 }).$mount('#app')
 
 export default app;

@@ -3,6 +3,8 @@ import VueRouter from 'vue-router';
 
 import { App } from './layouts/app';
 import { Contact } from "./pages/contact/contact";
+import { Heading } from "./layouts/header/heading";
+
 
 Vue.use(VueRouter);
 
@@ -11,9 +13,12 @@ const router = new VueRouter({
     routes: [
         {
             path: '/',
-            redirect: {name: 'contact'},
+            // redirect: {name: 'contact'},
             name: 'app',
-            component: App,
+            component: {
+                default: App,
+                heading: Heading,
+            },
             children: [
                 {
                     path: '/contact',
@@ -21,7 +26,6 @@ const router = new VueRouter({
                     component: Contact
                 }
             ]
-
         }
     ]
 })
