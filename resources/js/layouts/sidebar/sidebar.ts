@@ -13,6 +13,5 @@ export class Sidebar extends Vue {
     public menuVisible = false;
 
     public created() {
-        console.log('sidebar create');
     }
 }

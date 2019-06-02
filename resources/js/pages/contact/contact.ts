@@ -9,7 +9,14 @@ import "./contact.scss";
 })
 
 export class Contact extends Vue {
+
+    public name: string = '';
+    public email: string = '';
+    public telephone: string = '';
+    public message: string = '';
+    public file: string = '';
+
+
     public created() {
-        console.log('teste page contact');
     }
 }

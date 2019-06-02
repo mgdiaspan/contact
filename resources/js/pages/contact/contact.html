@@ -1,14 +1,25 @@
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Example Component</div>
-
-                <div class="card-body teste">
-                    contact page
-                </div>
-            </div>
-        </div>
-    </div>
+<div class="w-75">
+    <br>
+    <h2>Contact</h2>
+    <md-field>
+        <label>Name</label>
+        <md-input type="text" v-model="name" placeholder="Your name"></md-input>
+    </md-field>
+    <md-field>
+        <label>E-mail</label>
+        <md-input type="email" v-model="email" placeholder="your e-mail"></md-input>
+    </md-field>
+    <md-field>
+        <label>Telephone</label>
+        <md-input type="tel" v-model="telephone" placeholder="ypur telephone"></md-input>
+    </md-field>
+    <md-field>
+        <label>Message</label>
+        <md-textarea v-model="message"></md-textarea>
+    </md-field>
+    <md-field>
+        <label>File</label>
+        <md-file v-model="file" />
+    </md-field>
 </div>
 
