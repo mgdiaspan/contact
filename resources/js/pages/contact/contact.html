@@ -1,0 +1,39 @@
+<div class="w-75">
+    <br>
+    <h2>Contact</h2>
+    <md-field :class="name ? '' : requiredValidate">
+        <label>Name</label>
+        <md-input type="text" v-model="name"required></md-input>
+        <span class="md-error">Field is required</span>
+    </md-field>
+    <md-field :class="email ? '' : requiredValidate">
+        <label>E-mail</label>
+        <md-input type="email" v-model="email" required></md-input>
+        <span class="md-error">Field is required</span>
+    </md-field>
+    <md-field :class="telephone ? '' : requiredValidate">
+        <label>Telephone</label>
+        <md-input type="tel" v-model="telephone" required></md-input>
+        <span class="md-error">Field is required</span>
+    </md-field>
+    <md-field :class="message ? '' : requiredValidate">
+        <label>Message</label>
+        <md-textarea v-model="message" required></md-textarea>
+        <span class="md-error">Field is required</span>
+    </md-field>
+    <md-field :class="nameFile ? '' : requiredValidate">
+        <label>File</label>
+        <md-file v-model="nameFile" id="file" ref="file" @change="handleFileUpload()"
+                 accept="text/plain, .pdf, .doc, .docx, .odt" required/>
+        <span class="md-error">Field is required</span>
+    </md-field>
+
+    <md-button v-on:click="clearContact()" class="md-raised md-accent">Clear</md-button>
+    <md-button v-on:click="sendContact()" class="md-raised md-primary">Save</md-button>
+
+    <md-snackbar :md-position="'center'" :md-duration="Infinity" :md-active.sync="showSnackbar" md-persistent>
+        <span>{{messageSnackbar}}</span>
+        <md-button class="md-primary" @click="showSnackbar = false">Retry</md-button>
+    </md-snackbar>
+</div>
+
