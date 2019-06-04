@@ -2,6 +2,7 @@ import Vue from "vue";
 import Component from "vue-class-component";
 
 import "./sidebar.scss";
+import {Prop} from "vue-property-decorator";
 
 @Component({
     template: require("./sidebar.html"),
@@ -10,8 +11,23 @@ import "./sidebar.scss";
 
 export class Sidebar extends Vue {
 
-    public menuVisible = false;
+    @Prop({
+        default: false,
+        type: Boolean
+    })
+    public menuVisible;
 
-    public created() {
+    /**
+     * check visible menu
+     */
+    get checkMenu(){
+        return this.menuVisible ? false : true;
+    }
+
+    /**
+     * Open sidebar
+     */
+    public closeSidebar(){
+        this.$emit('update:menuVisible', this.checkMenu);
     }
 }

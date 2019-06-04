@@ -10,4 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::post('/contact/save', 'ContactController@save');
+
 Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+

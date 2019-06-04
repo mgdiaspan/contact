@@ -5,7 +5,7 @@
         </md-app-toolbar>
 
         <md-app-drawer :md-active.sync="menuVisible">
-            <sidebar></sidebar>
+            <sidebar :menu-visible.sync="menuVisible"></sidebar>
         </md-app-drawer>
 
         <md-app-content>

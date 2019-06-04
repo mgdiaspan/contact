@@ -17,8 +17,4 @@ export class App extends Vue {
      * Control menu visible
      */
     public menuVisible = false;
-
-    public created() {
-
-    }
 }

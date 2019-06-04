@@ -17,13 +17,16 @@ export class Heading extends Vue {
     public menuVisible;
 
     /**
+     * check visible menu
+     */
+    get checkMenu(){
+        return this.menuVisible ? false : true;
+    }
+
+    /**
      * Open sidebar
      */
     public openSidebar(){
-        this.menuVisible = !this.menuVisible;
-        this.$emit('update:menuVisible', this.menuVisible);
-    }
-
-    public created() {
+        this.$emit('update:menuVisible', this.checkMenu);
     }
 }
