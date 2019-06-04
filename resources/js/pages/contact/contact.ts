@@ -88,6 +88,7 @@ export class Contact extends Vue {
                 } else {
                     vm.messageSnackbar = 'Success save contact';
                     vm.showSnackbar = true;
+                    vm.clearContact();
                 }
             })
             .catch(function (error) {
@@ -105,6 +106,8 @@ export class Contact extends Vue {
         this.telephone = '';
         this.message = '';
         this.nameFile = '';
+        this.file = null;
+        this.$refs.file.$refs.inputFile.value = null;
     };
 
     /**
