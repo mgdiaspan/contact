@@ -1,7 +1,7 @@
 # contact
 Landing page to contact
 
-#Run project
+# Run project
 
  - composer install
 
